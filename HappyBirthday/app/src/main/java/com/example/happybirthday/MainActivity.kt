@@ -21,27 +21,20 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.happybirthday.ui.form.AffirmationsApp
-import com.example.happybirthday.ui.form.ArtSpaceLayout
-import com.example.happybirthday.ui.form.ComposeArticle
 import com.example.happybirthday.ui.form.ComposeQuadrantScreen
-import com.example.happybirthday.ui.form.GeneralTaskCompleted
-import com.example.happybirthday.ui.form.BusinessCard
-import com.example.happybirthday.ui.form.CoursesApp
-import com.example.happybirthday.ui.form.DiceRollerApp
-import com.example.happybirthday.ui.form.LemonadeApp
-import com.example.happybirthday.ui.form.TipTimeLayout
+import com.example.happybirthday.ui.form.GameScreen.GameScreen
 import com.example.happybirthday.ui.theme.HappyBirthdayTheme
+import com.example.happybirthday.ui.theme.WoofTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            HappyBirthdayTheme() {
-//                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                CoursesApp()
-//                }
+            WoofTheme () {
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                GameScreen(modifier = Modifier.padding(innerPadding))
+                }
             }
         }
     }
